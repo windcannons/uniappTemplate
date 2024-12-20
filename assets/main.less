@@ -1,0 +1,42 @@
+.u-navbar__content__left{
+  opacity: 1 !important;
+}
+
+//文本超出省略
+.textOmit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* 默认 1 行 */
+}
+
+.textOmit[data-omit="2"] {
+  -webkit-line-clamp: 2;
+}
+
+.textOmit[data-omit="3"] {
+  -webkit-line-clamp: 3;
+}
+
+.textOmit[data-omit="4"] {
+  -webkit-line-clamp: 4;
+}
+
+button[open-type="share"] {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  line-height: initial;
+  padding-left: 0;
+  padding-right: 0;
+
+  text {
+    z-index: 100;
+    margin-top: 0;
+  }
+  &::after {
+    border: 0;
+  }
+}

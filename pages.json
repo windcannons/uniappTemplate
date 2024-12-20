@@ -1,0 +1,102 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u--(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/reserve/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/dialogue/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/drug/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/my/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#BCA071",
+		"borderStyle": "black",
+		"position": "bottom",
+//		如不用自带的tabbar则关闭注释
+		//		"custom": true,
+//		"height": "0.000001px",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/10.png",
+				"selectedIconPath": "static/tabbar/11.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/reserve/index",
+				"iconPath": "static/tabbar/20.png",
+				"selectedIconPath": "static/tabbar/21.png",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/dialogue/index",
+				"iconPath": "static/tabbar/30.png",
+				"selectedIconPath": "static/tabbar/31.png",
+				"text": "教程"
+			},
+			{
+				"pagePath": "pages/drug/index",
+				"iconPath": "static/tabbar/40.png",
+				"selectedIconPath": "static/tabbar/41.png",
+				"text": "社区"
+			},
+			{
+				"pagePath": "pages/my/index",
+				"iconPath": "static/tabbar/50.png",
+				"selectedIconPath": "static/tabbar/51.png",
+				"text": "我的"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}
