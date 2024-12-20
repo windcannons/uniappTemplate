@@ -1,8 +1,4 @@
-import {
-    goPage
-} from "../utils/method";
-
-export const baseUrl = 'http://192.168.5.85:8061'
+export const baseUrl = 'http://192.168.5.85:8061'  //请求地址
 export const handlerUpload = function (path) {
     uni.showLoading({
         title: '正在上传...'

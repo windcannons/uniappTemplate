@@ -91,9 +91,6 @@ import {
     onLoad,
 } from "@dcloudio/uni-app";
 import {
-    weChatPhone
-} from "../../request/list/weChatPhone";
-import {
     backPage
 } from "../../utils/method";
 
@@ -128,16 +125,9 @@ const onGetPhoneNumber = (e) => {
     }
     loginInfo.codePhone = e.detail.code
 
-    weChatPhone({...loginInfo}).then(res => {
-        uni.setStorageSync('token',res.data.token)
-            //newUser
-            //是否新用户  0新用户  1老用户
-        if (Number(res.data.newUser)) {
-            backPage()
-        } else {
-            ispopUp.value = true
-        }
-    })
+        // 在此调用登录并存入token
+        //uni.setStorageSync('token',res.data.token)
+
 }
 
 const chosePopup = ()=>{

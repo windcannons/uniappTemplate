@@ -18,9 +18,7 @@ import {
 import {
     onMounted
 } from "vue";
-import {
-    addPosition
-} from "../../request/list/addPosition";
+
 
 const store = useUserStore()
 const add = () => {
@@ -28,9 +26,7 @@ const add = () => {
 }
 
 onMounted(()=>{
-    addPosition({code:'home_bottom_become_a_Member_content'}).then(res=>{
-        console.log(res)
-    })
+
 })
 
 </script>
