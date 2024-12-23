@@ -79,3 +79,14 @@ export function requestList(request, getInfo, callback) {
         callback([]);
     });
 }
+
+
+//手机号加密 传入手机号，返回中间四位加密号码
+export function maskPhoneNumber(phone) {
+    // 判断手机号是否合法（11位数字）
+    if (!/^\d{11}$/.test(phone)) {
+        return null;
+    }
+    // 将中间四位替换为 *
+    return phone.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2');
+}
