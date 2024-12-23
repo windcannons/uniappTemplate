@@ -61,7 +61,7 @@ const fn = debounceFn((info) => {
 
 
 
-#### 封装方法方法
+#### 封装方法
 
 - 分享页面 在onLoad中调用
 
@@ -112,40 +112,55 @@ export function requestList(request, getInfo, callback) {
 - 请求
 
 ```
+<script
+    setup>
 import {
-    findActivityList
-} from "../../request/list/findActivityList";
+    onLoad,
+    onReachBottom
+} from "@dcloudio/uni-app";
+import {
+    reactive
+} from "vue";
+import {
+    requestList,
+} from "../../utils/method";
+import {
+    selectCouponList
+} from "../../request/list/selectCouponList";
+
 //列表参数
 let getInfo = reactive({
-    current: 1,
-    size: 12,
-    allSize: '',
-    isLoading: true,
+    current: 1,//当前页数
+    size: 12,//每页条数
+    allSize: '',//总条数
+    isLoading: true,//是否处于加载状态 (配合loading组件使用)
 })
 //列表数据
-let activityList = reactive([])
+let dataList = reactive([])
 onLoad(async () => {
-    requestList(findActivityList, getInfo, (newActivities) => {
-        activityList.splice(0, activityList.length, ...newActivities);
+    requestList(selectCouponList, getInfo, (newActivities) => {
+        dataList.splice(0, dataList.length, ...newActivities);
     });
-    showShareMenu()
 })
 // 触底事件处理函数
 onReachBottom(() => {
-    requestList(findActivityList, getInfo, (newActivities) => {
-        activityList.push(...newActivities);
+    requestList(selectCouponList, getInfo, (newActivities) => {
+        dataList.push(...newActivities);
     });
 })
+</script>
 ```
 
-`findActivityList`为请求方法
+
+
+`findActivityList`为请求方法 `/request/list`
 
 ```
 import {
     request
 } from "../request";
 
-export let findActivityList  = (data) => request('/api/issueEssay/findActivityList', 'GET', data) //活动列表查询
+export let selectCouponList  = (data) => request('/api/coupon/selectCouponList', 'POST', data)//优惠卷列表
 ```
 
 
