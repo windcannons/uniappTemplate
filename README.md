@@ -192,18 +192,6 @@ npm i
 
 
 
-# 项目相关信息
-
-微信小程序账号
-
-```
-wangzhen@neumee.email
-neumee88TT
-```
-
-
-
-
 
 # 瀑布流组件
 
